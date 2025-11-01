@@ -171,23 +171,14 @@
     </footer>
 
     <script>
-        // Smooth scroll mejorado - solo para anclas internas
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                const href = this.getAttribute('href');
-                
-                // Solo aplicar smooth scroll si es un ancla interna válida
-                if (href !== '#' && document.querySelector(href)) {
-                    e.preventDefault();
-                    const target = document.querySelector(href);
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-                // Los enlaces externos (WhatsApp, email) funcionan normalmente
+        // Solo smooth scroll para el botón "Ver demo" - versión ultra simple
+        document.querySelector('a[href="#video-demo"]').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('video-demo').scrollIntoView({ 
+                behavior: 'smooth' 
             });
         });
     </script>
 </body>
 </html>
+
