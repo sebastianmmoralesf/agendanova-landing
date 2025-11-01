@@ -23,7 +23,6 @@
 <body>
     <header>
         <nav class="container">
-            <!-- REEMPLAZA assets/logo.png con tu logo real -->
             <div class="logo">
                 <img src="assets/logo.png" alt="AgendaNova Logo" width="180" height="40">
             </div>
@@ -39,7 +38,6 @@
                 <p class="hero-features">Entrega en 7 días | Soporte directo | Personalizable</p>
                 <div class="hero-buttons">
                     <a href="#video-demo" class="btn btn-primary">Ver demo</a>
-                    <!-- REEMPLAZA +51XXXXXXXX con tu número de WhatsApp (sin espacios ni signos) -->
                     <a href="https://wa.me/51944580173" class="btn btn-secondary" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">Contactar por WhatsApp</a>
                 </div>
             </div>
@@ -135,7 +133,6 @@
             <div class="container">
                 <h2>Quién soy</h2>
                 <div class="about-content">
-                    <!-- REEMPLAZA assets/logo.png con tu foto si lo deseas -->
                     <div class="about-image">
                         <img src="assets/foto.jpg" alt="Sebastián Morales" width="150" height="150">
                     </div>
@@ -154,9 +151,7 @@
                 <h2>¿Listo para simplificar su agenda?</h2>
                 <p>Conversemos sobre cómo este sistema puede adaptarse a su consultorio.</p>
                 <div class="cta-buttons">
-                    <!-- REEMPLAZA +51XXXXXXXX con tu número de WhatsApp -->
                     <a href="https://wa.me/51944580173" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Contactar por WhatsApp</a>
-                    <!-- REEMPLAZA tu@correo.com con tu email real -->
                     <a href="mailto:agendanova@gmail.com" class="btn btn-secondary">Enviar email</a>
                 </div>
             </div>
@@ -165,20 +160,34 @@
     </main>
     <footer>
         <div class="container">
-            <!-- REEMPLAZA +51 XXXXXXXX con tu número de contacto -->
             <p>&copy; 2025 AgendaNova — Desarrollado por Sebastián Morales. Contacto: +51 944580173</p>
         </div>
     </footer>
 
     <script>
-        // Solo smooth scroll para el botón "Ver demo" - versión ultra simple
-        document.querySelector('a[href="#video-demo"]').addEventListener('click', function(e) {
-            e.preventDefault();
-            document.getElementById('video-demo').scrollIntoView({ 
-                behavior: 'smooth' 
-            });
+        // Esperar a que el DOM esté completamente cargado
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // Smooth scroll para el botón "Ver demo"
+            const btnVerDemo = document.querySelector('a[href="#video-demo"]');
+            if (btnVerDemo) {
+                btnVerDemo.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const videoSection = document.getElementById('video-demo');
+                    if (videoSection) {
+                        videoSection.scrollIntoView({ 
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            }
+            
+            // Los botones de WhatsApp funcionarán automáticamente
+            // porque son enlaces normales con target="_blank"
+            
+            console.log('Scripts cargados correctamente');
         });
     </script>
 </body>
 </html>
-
