@@ -510,4 +510,14 @@ footer p {
     .step {
         transition: all 0.3s ease;
     }
+    /* Fix para asegurar que los botones sean clickeables */
+.btn {
+    position: relative;
+    z-index: 10;
+    pointer-events: auto;
+}
+
+.hero-buttons {
+    position: relative;
+    z-index: 10;
 }
